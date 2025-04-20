@@ -12,19 +12,19 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 @app.route("/analyze", methods=["POST"])
 def analyze():
     data = request.json
-    sport = data.get("sport")
-    prompt = data.get("prompt")
-    if not prompt or not sport:
-        return jsonify({"error": "Missing prompt or sport"}), 400
-
-    full_prompt = f"Sport: {sport}\nPrompt: {prompt}"
-
+    sport = data.get("sport", "")
+    prompt = data.get("prompt", "")
+    
     try:
         response = openai.ChatCompletion.create(
             model="gpt-4",
-            messages=[{"role": "user", "content": full_prompt}]
+            messages=[
+                {"role": "system", "content": f"You are an expert {sport} coach analyzing video performance."},
+                {"role": "user", "content": prompt}
+            ]
         )
-        return jsonify({"response": response.choices[0].message["content"]})
+        result = response.choices[0].message["content"]
+        return jsonify({"analysis": result})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
