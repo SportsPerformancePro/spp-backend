@@ -1,2 +1,1 @@
-# SPP Backend
-Flask API for Sports Performance Pro
+# Sports Performance Pro Backend
