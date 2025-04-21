@@ -1,13 +1,14 @@
-# Sports Performance Pro - Zip #5
+# Sports Performance Pro - Zip #5 (v4)
 
 ## Structure
 
 ```
-SPP-Zip5/
-├── server/
+SPP-Zip5-v4/
+├── backend/
 │   ├── package.json
-│   └── index.js
-└── client/
+│   ├── index.js
+│   └── Procfile
+└── frontend/
     ├── package.json
     ├── vite.config.js
     ├── public/
@@ -22,20 +23,7 @@ SPP-Zip5/
             └── Profile.jsx
 ```
 
-## Getting Started
+- **backend/**: Node/Express auth server. Deploy this directory to Railway, root is backend.
+- **frontend/**: Vite/React app. Deploy this directory to Vercel, root is frontend.
 
-1. **Server**  
-   ```bash
-   cd server
-   npm install
-   JWT_SECRET=your_secret node index.js
-   ```
-
-2. **Client**  
-   ```bash
-   cd client
-   npm install
-   npm run dev
-   ```
-
-Client will run on `http://localhost:3000`, server on `http://localhost:4000`.
+No confusion—each directory is self-contained for its platform.
