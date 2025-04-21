@@ -1,24 +1,41 @@
-# Sports Performance Pro (Zip#4e)
+# Sports Performance Pro - Zip #5
 
-## Frontend Setup
+## Structure
+
 ```
-cd frontend
-npm install
-npm run dev
+SPP-Zip5/
+├── server/
+│   ├── package.json
+│   └── index.js
+└── client/
+    ├── package.json
+    ├── vite.config.js
+    ├── public/
+    │   └── index.html
+    └── src/
+        ├── main.jsx
+        ├── App.jsx
+        ├── contexts/
+        │   └── AuthContext.jsx
+        └── pages/
+            ├── Login.jsx
+            └── Profile.jsx
 ```
 
-## Backend Setup
-```
-cd backend
-pip install -r requirements.txt
-export OPENAI_API_KEY=your_key_here
-python app.py
-```
+## Getting Started
 
-## Features
-- Athlete Profile form (name, email, age, sport, ranking, experience)
-- Video upload + (still-frame extract placeholder)
-- Ask XLevel Coach prompt submission
-- Tone toggle (Pro/Kid mode)
-- Coach feedback display
-- Modular file structure for Vercel (frontend) and Flask (backend)
+1. **Server**  
+   ```bash
+   cd server
+   npm install
+   JWT_SECRET=your_secret node index.js
+   ```
+
+2. **Client**  
+   ```bash
+   cd client
+   npm install
+   npm run dev
+   ```
+
+Client will run on `http://localhost:3000`, server on `http://localhost:4000`.
