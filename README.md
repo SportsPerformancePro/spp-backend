@@ -1,11 +1,13 @@
-# Backend - Sports Performance Pro
+# Sports Performance Pro – Backend Deployment
 
-## Getting Started
+## Files
+- `package.json`
+- `index.js`
+- `Procfile`
 
+## Setup
 1. `npm install`
 2. Set environment variable `JWT_SECRET`
 3. `npm start` (runs on port 4000)
 
-Endpoints:
-- POST `/api/login`
-- GET `/api/profile`
+Railway will use the Procfile to start this service with `npm start`.
