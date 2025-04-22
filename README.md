@@ -1,29 +1,11 @@
-# Sports Performance Pro - Zip #5 (v4)
+# Backend - Sports Performance Pro
 
-## Structure
+## Getting Started
 
-```
-SPP-Zip5-v4/
-├── backend/
-│   ├── package.json
-│   ├── index.js
-│   └── Procfile
-└── frontend/
-    ├── package.json
-    ├── vite.config.js
-    ├── public/
-    │   └── index.html
-    └── src/
-        ├── main.jsx
-        ├── App.jsx
-        ├── contexts/
-        │   └── AuthContext.jsx
-        └── pages/
-            ├── Login.jsx
-            └── Profile.jsx
-```
+1. `npm install`
+2. Set environment variable `JWT_SECRET`
+3. `npm start` (runs on port 4000)
 
-- **backend/**: Node/Express auth server. Deploy this directory to Railway, root is backend.
-- **frontend/**: Vite/React app. Deploy this directory to Vercel, root is frontend.
-
-No confusion—each directory is self-contained for its platform.
+Endpoints:
+- POST `/api/login`
+- GET `/api/profile`

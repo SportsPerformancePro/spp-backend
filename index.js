@@ -16,7 +16,6 @@ app.post('/api/login', (req, res) => {
   const { email, password } = req.body;
   const user = users.find(u => u.email === email && u.password === password);
   if (!user) return res.status(401).json({ message: 'Invalid credentials' });
-
   const token = jwt.sign({ sub: user.id, name: user.name }, JWT_SECRET, { expiresIn: '2h' });
   res.json({ token, name: user.name });
 });
@@ -28,7 +27,7 @@ app.get('/api/profile', (req, res) => {
   try {
     const payload = jwt.verify(token, JWT_SECRET);
     res.json({ id: payload.sub, name: payload.name });
-  } catch (err) {
+  } catch {
     res.status(401).json({ message: 'Invalid token' });
   }
 });
